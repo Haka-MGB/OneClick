@@ -1,0 +1,115 @@
+name: Continuous Integration
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+env:
+  DOTNET_VERSION: '8.0.x'
+  DOTNET_SKIP_FIRST_TIME_EXPERIENCE: 'true'
+  DOTNET_CLI_TELEMETRY_OPTOUT: 'true'
+
+jobs:
+  build-and-test:
+    runs-on: windows-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0  # Shallow clones should be disabled for better analysis
+        
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: ${{ env.DOTNET_VERSION }}
+        
+    - name: Cache NuGet packages
+      uses: actions/cache@v3
+      with:
+        path: ~/.nuget/packages
+        key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-nuget-
+          
+    - name: Restore dependencies
+      run: dotnet restore
+      
+    - name: Build solution
+      run: dotnet build --configuration Release --no-restore --verbosity minimal
+      
+    - name: Run unit tests
+      run: |
+        dotnet test tests/OneClick.Domain.Tests --configuration Release --no-build --verbosity minimal --collect:"XPlat Code Coverage" --results-directory TestResults/
+        dotnet test tests/OneClick.Application.Tests --configuration Release --no-build --verbosity minimal --collect:"XPlat Code Coverage" --results-directory TestResults/
+        
+    - name: Run integration tests
+      run: dotnet test tests/OneClick.Infrastructure.Tests --configuration Release --no-build --verbosity minimal --collect:"XPlat Code Coverage" --results-directory TestResults/
+      
+    - name: Run architecture tests
+      run: dotnet test tests/OneClick.ArchTests --configuration Release --no-build --verbosity minimal
+      
+    - name: Generate coverage report
+      run: |
+        dotnet tool install -g dotnet-reportgenerator-globaltool
+        reportgenerator -reports:"TestResults/**/coverage.cobertura.xml" -targetdir:TestResults/CoverageReport -reporttypes:"Html;Cobertura"
+        
+    - name: Upload coverage reports
+      uses: actions/upload-artifact@v3
+      with:
+        name: coverage-report
+        path: TestResults/CoverageReport/
+        
+    - name: Check coverage thresholds
+      run: |
+        # Parse coverage and fail if below thresholds
+        # Domain: 90%, Overall: 80%
+        $coverage = [xml](Get-Content "TestResults/CoverageReport/Cobertura.xml")
+        $overallRate = [double]$coverage.coverage.'line-rate'
+        Write-Host "Overall coverage: $($overallRate * 100)%"
+        if ($overallRate -lt 0.80) {
+          Write-Error "Coverage $($overallRate * 100)% is below 80% threshold"
+          exit 1
+        }
+
+  security-scan:
+    runs-on: windows-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+      
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: ${{ env.DOTNET_VERSION }}
+        
+    - name: Restore dependencies
+      run: dotnet restore
+      
+    - name: Run security scan
+      run: |
+        dotnet list package --vulnerable --include-transitive 2>&1 | Tee-Object -FilePath security-scan.log
+        if (Select-String -Path security-scan.log -Pattern "has the following vulnerable packages") {
+          Write-Error "Vulnerable packages detected"
+          Get-Content security-scan.log
+          exit 1
+        }
+
+  static-analysis:
+    runs-on: windows-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+      
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: ${{ env.DOTNET_VERSION }}
+        
+    - name: Restore dependencies
+      run: dotnet restore
+      
+    - name: Build with static analysis
+      run: dotnet build --configuration Release --verbosity normal
+      # TreatWarningsAsErrors=true is set in Directory.Build.props

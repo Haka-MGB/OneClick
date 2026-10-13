@@ -1,0 +1,83 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- Design Tokens - One Click Design System -->
+    
+    <!-- Color Palette - Light Theme -->
+    <Color x:Key="Color.Surface.Window.Light">#F4F6F9</Color>
+    <Color x:Key="Color.Surface.Card.Light">#FFFFFF</Color>
+    <Color x:Key="Color.Surface.Sidebar.Light">#14213D</Color>
+    <Color x:Key="Color.Text.Primary.Light">#1B2433</Color>
+    <Color x:Key="Color.Text.Secondary.Light">#5B6677</Color>
+    <Color x:Key="Color.Accent.Light">#2F6FED</Color>
+    <Color x:Key="Color.Danger.Light">#B42318</Color>
+    <Color x:Key="Color.Success.Light">#1E7A4C</Color>
+    <Color x:Key="Color.Border.Light">#DDE2EA</Color>
+    
+    <!-- Color Palette - Dark Theme -->
+    <Color x:Key="Color.Surface.Window.Dark">#14181F</Color>
+    <Color x:Key="Color.Surface.Card.Dark">#1C222C</Color>
+    <Color x:Key="Color.Surface.Sidebar.Dark">#0F1624</Color>
+    <Color x:Key="Color.Text.Primary.Dark">#E8ECF3</Color>
+    <Color x:Key="Color.Text.Secondary.Dark">#A9B3C4</Color>
+    <Color x:Key="Color.Accent.Dark">#5B8DF5</Color>
+    <Color x:Key="Color.Danger.Dark">#F04438</Color>
+    <Color x:Key="Color.Success.Dark">#47C28A</Color>
+    <Color x:Key="Color.Border.Dark">#2B3442</Color>
+    
+    <!-- Dynamic Color Brushes (automatically switch with theme) -->
+    <SolidColorBrush x:Key="Brush.Surface.Window" Color="{DynamicResource Color.Surface.Window}" />
+    <SolidColorBrush x:Key="Brush.Surface.Card" Color="{DynamicResource Color.Surface.Card}" />
+    <SolidColorBrush x:Key="Brush.Surface.Sidebar" Color="{DynamicResource Color.Surface.Sidebar}" />
+    <SolidColorBrush x:Key="Brush.Text.Primary" Color="{DynamicResource Color.Text.Primary}" />
+    <SolidColorBrush x:Key="Brush.Text.Secondary" Color="{DynamicResource Color.Text.Secondary}" />
+    <SolidColorBrush x:Key="Brush.Accent" Color="{DynamicResource Color.Accent}" />
+    <SolidColorBrush x:Key="Brush.Danger" Color="{DynamicResource Color.Danger}" />
+    <SolidColorBrush x:Key="Brush.Success" Color="{DynamicResource Color.Success}" />
+    <SolidColorBrush x:Key="Brush.Border" Color="{DynamicResource Color.Border}" />
+    
+    <!-- Typography Scale -->
+    <FontFamily x:Key="Font.Primary">Segoe UI Variable, Segoe UI</FontFamily>
+    <FontFamily x:Key="Font.Mono">Consolas, Courier New</FontFamily>
+    
+    <!-- Font Sizes -->
+    <system:Double xmlns:system="clr-namespace:System;assembly=mscorlib" x:Key="FontSize.Title">24</system:Double>
+    <system:Double xmlns:system="clr-namespace:System;assembly=mscorlib" x:Key="FontSize.Heading">16</system:Double>
+    <system:Double xmlns:system="clr-namespace:System;assembly=mscorlib" x:Key="FontSize.Body">14</system:Double>
+    <system:Double xmlns:system="clr-namespace:System;assembly=mscorlib" x:Key="FontSize.Caption">12</system:Double>
+    <system:Double xmlns:system="clr-namespace:System;assembly=mscorlib" x:Key="FontSize.Small">11</system:Double>
+    
+    <!-- Line Heights -->
+    <system:Double xmlns:system="clr-namespace:System;assembly=mscorlib" x:Key="LineHeight.Title">32</system:Double>
+    <system:Double xmlns:system="clr-namespace:System;assembly=mscorlib" x:Key="LineHeight.Heading">24</system:Double>
+    <system:Double xmlns:system="clr-namespace:System;assembly=mscorlib" x:Key="LineHeight.Body">20</system:Double>
+    <system:Double xmlns:system="clr-namespace:System;assembly=mscorlib" x:Key="LineHeight.Caption">16</system:Double>
+    
+    <!-- Spacing Scale (8px grid) -->
+    <Thickness x:Key="Spacing.None">0</Thickness>
+    <Thickness x:Key="Spacing.XSmall">4</Thickness>
+    <Thickness x:Key="Spacing.Small">8</Thickness>
+    <Thickness x:Key="Spacing.Medium">16</Thickness>
+    <Thickness x:Key="Spacing.Large">24</Thickness>
+    <Thickness x:Key="Spacing.XLarge">32</Thickness>
+    <Thickness x:Key="Spacing.XXLarge">40</Thickness>
+    
+    <!-- Corner Radius -->
+    <CornerRadius x:Key="Radius.Small">4</CornerRadius>
+    <CornerRadius x:Key="Radius.Medium">6</CornerRadius>
+    <CornerRadius x:Key="Radius.Large">8</CornerRadius>
+    
+    <!-- Shadows -->
+    <DropShadowEffect x:Key="Shadow.Card" 
+                      Color="#000000" 
+                      Opacity="0.1" 
+                      ShadowDepth="2" 
+                      BlurRadius="8" 
+                      Direction="270" />
+    
+    <!-- Animation Durations -->
+    <Duration x:Key="Duration.Fast">0:0:0.15</Duration>
+    <Duration x:Key="Duration.Normal">0:0:0.3</Duration>
+    <Duration x:Key="Duration.Slow">0:0:0.5</Duration>
+    
+</ResourceDictionary>

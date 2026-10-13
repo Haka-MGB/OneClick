@@ -1,0 +1,22 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- Light Theme Color Mapping -->
+    <Color x:Key="Color.Surface.Window">#F4F6F9</Color>
+    <Color x:Key="Color.Surface.Card">#FFFFFF</Color>
+    <Color x:Key="Color.Surface.Sidebar">#14213D</Color>
+    <Color x:Key="Color.Text.Primary">#1B2433</Color>
+    <Color x:Key="Color.Text.Secondary">#5B6677</Color>
+    <Color x:Key="Color.Accent">#2F6FED</Color>
+    <Color x:Key="Color.Danger">#B42318</Color>
+    <Color x:Key="Color.Success">#1E7A4C</Color>
+    <Color x:Key="Color.Border">#DDE2EA</Color>
+    
+    <!-- Additional Light Theme Colors -->
+    <Color x:Key="Color.Surface.Hover">#EAEDF4</Color>
+    <Color x:Key="Color.Surface.Pressed">#E0E4EB</Color>
+    <Color x:Key="Color.Text.Disabled">#9CA3AF</Color>
+    <Color x:Key="Color.Text.OnAccent">#FFFFFF</Color>
+    <Color x:Key="Color.Text.OnDanger">#FFFFFF</Color>
+    
+</ResourceDictionary>

@@ -1,0 +1,168 @@
+<Window x:Class="OneClick.App.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:OneClick.App"
+        Title="One Click"
+        Height="720" Width="1140"
+        MinHeight="620" MinWidth="980"
+        WindowStartupLocation="CenterScreen"
+        Background="{DynamicResource Brush.Surface.Window}">
+
+    <Window.InputBindings>
+        <KeyBinding Key="Z" Modifiers="Ctrl" Command="{Binding UndoCommand}" />
+        <KeyBinding Key="F" Modifiers="Ctrl" Command="{Binding FocusSearchCommand}" />
+    </Window.InputBindings>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="232" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- ── Sidebar ── -->
+        <Border Grid.Column="0" Background="#14213D">
+            <DockPanel>
+
+                <!-- Brand -->
+                <Border DockPanel.Dock="Top" Padding="20,24,20,20">
+                    <StackPanel Orientation="Horizontal">
+                        <Border Width="30" Height="30" CornerRadius="6" Background="{DynamicResource Brush.Accent}">
+                            <Ellipse Width="12" Height="12" Fill="White"
+                                     HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <StackPanel Margin="12,0,0,0" VerticalAlignment="Center">
+                            <TextBlock Text="One Click" Foreground="White"
+                                       FontSize="15" FontWeight="SemiBold"
+                                       FontFamily="{DynamicResource Font.Primary}"/>
+                            <TextBlock Text="Version 1.0" Foreground="#9FADC8"
+                                       FontSize="11"
+                                       FontFamily="{DynamicResource Font.Primary}"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+
+                <!-- Nav section label -->
+                <TextBlock DockPanel.Dock="Top"
+                           Text="TOOLS" Foreground="#4B607A"
+                           FontSize="10" FontWeight="Bold"
+                           FontFamily="{DynamicResource Font.Primary}"
+                           Margin="20,8,0,4"/>
+
+                <!-- Navigation Items -->
+                <StackPanel DockPanel.Dock="Top">
+                    <Button x:Name="NavOverview"   Style="{StaticResource Button.Nav}" Tag="Active"
+                            Click="Nav_Click" Content="  Overview"      AutomationProperties.Name="Overview" />
+                    <Button x:Name="NavSearch"     Style="{StaticResource Button.Nav}"
+                            Click="Nav_Click" Content="  Smart Search"  AutomationProperties.Name="Smart Search" />
+                    <Button x:Name="NavRename"     Style="{StaticResource Button.Nav}"
+                            Click="Nav_Click" Content="  Bulk Rename"   AutomationProperties.Name="Bulk Rename" />
+                    <Button x:Name="NavOrganise"   Style="{StaticResource Button.Nav}"
+                            Click="Nav_Click" Content="  Folder Organiser" AutomationProperties.Name="Folder Organiser" />
+                    <Button x:Name="NavStorage"    Style="{StaticResource Button.Nav}"
+                            Click="Nav_Click" Content="  Storage Analyser" AutomationProperties.Name="Storage Analyser" />
+                    <Button x:Name="NavHistory"  Style="{StaticResource Button.Nav}"
+                            Click="Nav_Click" Content="  History"   AutomationProperties.Name="History" />
+                </StackPanel>
+
+                <TextBlock DockPanel.Dock="Top"
+                           Text="MAINTENANCE" Foreground="#4B607A"
+                           FontSize="10" FontWeight="Bold"
+                           FontFamily="{DynamicResource Font.Primary}"
+                           Margin="20,16,0,4"/>
+
+                <StackPanel DockPanel.Dock="Top">
+                    <Button x:Name="NavPerformance" Style="{StaticResource Button.Nav}"
+                            Click="Nav_Click" Content="  Performance"   AutomationProperties.Name="Performance" />
+                    <Button x:Name="NavDuplicates" Style="{StaticResource Button.Nav}"
+                            Click="Nav_Click" Content="  Duplicates"    AutomationProperties.Name="Duplicates" />
+                    <Button x:Name="NavStartup"    Style="{StaticResource Button.Nav}"
+                            Click="Nav_Click" Content="  Startup Manager" AutomationProperties.Name="Startup Manager" />
+                    <Button x:Name="NavAutomation" Style="{StaticResource Button.Nav}"
+                            Click="Nav_Click" Content="  Automation"    AutomationProperties.Name="Automation" />
+                </StackPanel>
+
+                <TextBlock DockPanel.Dock="Top"
+                           Text="GENERAL" Foreground="#4B607A"
+                           FontSize="10" FontWeight="Bold"
+                           FontFamily="{DynamicResource Font.Primary}"
+                           Margin="20,16,0,4"/>
+
+                <StackPanel DockPanel.Dock="Top">
+                    <Button x:Name="NavGuides"   Style="{StaticResource Button.Nav}"
+                            Click="Nav_Click" Content="  Guides"    AutomationProperties.Name="Guides" />
+                    <Button x:Name="NavMigration"  Style="{StaticResource Button.Nav}"
+                            Click="Nav_Click" Content="  Migration"     AutomationProperties.Name="Migration" />
+                    <Button x:Name="NavBattery"    Style="{StaticResource Button.Nav}"
+                            Click="Nav_Click" Content="  Battery"       AutomationProperties.Name="Battery"
+                            Visibility="Collapsed"/>
+                    <Button x:Name="NavSettings" Style="{StaticResource Button.Nav}"
+                            Click="Nav_Click" Content="  Settings"  AutomationProperties.Name="Settings" />
+                </StackPanel>
+
+                <!-- Undo footer -->
+                <Border DockPanel.Dock="Bottom" Padding="16,16">
+                    <StackPanel>
+                        <TextBlock x:Name="TxtLastAction"
+                                   Text="No actions yet"
+                                   Foreground="#4B607A"
+                                   FontSize="11"
+                                   FontFamily="{DynamicResource Font.Primary}"
+                                   TextWrapping="Wrap"
+                                   Margin="0,0,0,8"/>
+                        <Button x:Name="BtnUndo"
+                                Content="Undo last action"
+                                Style="{StaticResource Button.Secondary}"
+                                IsEnabled="False"
+                                Click="BtnUndo_Click"
+                                AutomationProperties.Name="Undo last action"
+                                HorizontalAlignment="Stretch"
+                                Background="#1F3158"
+                                Foreground="#9FADC8"
+                                BorderThickness="0"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- Spacer -->
+                <Grid />
+
+            </DockPanel>
+        </Border>
+
+        <!-- ── Content Area ── -->
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <!-- Page host -->
+            <ContentControl x:Name="PageHost"
+                             Grid.Row="0"
+                             Focusable="False"/>
+
+            <!-- Status bar -->
+            <Border Grid.Row="1"
+                    Background="#EEF1F6"
+                    BorderBrush="{DynamicResource Brush.Border}"
+                    BorderThickness="0,1,0,0"
+                    Padding="32,6">
+                <Grid>
+                    <TextBlock x:Name="TxtStatus"
+                               Text="Ready"
+                               Foreground="{DynamicResource Brush.Text.Secondary}"
+                               FontSize="12"
+                               FontFamily="{DynamicResource Font.Primary}"
+                               AutomationProperties.LiveSetting="Polite"/>
+                    <TextBlock HorizontalAlignment="Right"
+                               Foreground="{DynamicResource Brush.Text.Secondary}"
+                               FontSize="12"
+                               FontFamily="{DynamicResource Font.Primary}">
+                        <Run Text="Ctrl+Z" FontWeight="SemiBold"/> <Run Text="Undo"/>
+                        <Run Text="  "/>
+                        <Run Text="Ctrl+F" FontWeight="SemiBold"/> <Run Text="Search"/>
+                    </TextBlock>
+                </Grid>
+            </Border>
+        </Grid>
+    </Grid>
+</Window>

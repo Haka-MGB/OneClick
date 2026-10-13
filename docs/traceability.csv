@@ -1,0 +1,30 @@
+Requirement ID,Test Case ID,Implementation Status,Test Status,Notes
+FR-CORE-01,TC-CORE-001,Not Started,Not Started,Single Operation Engine requirement
+FR-CORE-02,TC-CORE-002,Not Started,Not Started,Preview before changes requirement  
+FR-CORE-03,TC-CORE-003,Not Started,Not Started,Apply button naming requirement
+FR-CORE-04,TC-CORE-004,Not Started,Not Started,Write-ahead journaling requirement
+FR-CORE-05,TC-CORE-005,Not Started,Not Started,Undo capability requirement
+FR-CORE-06,TC-CORE-006,Not Started,Not Started,Protected locations requirement
+FR-CORE-07,TC-CORE-007,Not Started,Not Started,No overwrite policy requirement
+FR-CORE-08,TC-CORE-008,Not Started,Not Started,Hidden/system file exclusion requirement
+FR-CORE-09,TC-CORE-009,Not Started,Not Started,Locked file handling requirement
+FR-CORE-10,TC-CORE-010,Not Started,Not Started,Progress and cancellation requirement
+FR-CORE-11,TC-CORE-011,Not Started,Not Started,Holding area deletion requirement
+FR-CORE-12,TC-CORE-012,Not Started,Not Started,Startup recovery requirement
+FR-CORE-13,TC-CORE-013,Not Started,Not Started,Cross-drive move requirement
+FR-CORE-14,TC-CORE-014,Not Started,Not Started,Path handling requirement
+FR-CORE-15,TC-CORE-015,Not Started,Not Started,Recent file exclusion requirement
+FR-CORE-16,TC-CORE-016,Not Started,Not Started,Dry-run mode requirement
+FR-REN-01,TC-REN-001,Not Started,Not Started,Folder/file selection requirement
+FR-REN-02,TC-REN-002,Not Started,Not Started,Rename rules requirement
+FR-REN-03,TC-REN-003,Not Started,Not Started,Rule combination requirement
+FR-REN-04,TC-REN-004,Not Started,Not Started,Live preview requirement
+FR-REN-05,TC-REN-005,Not Started,Not Started,Numbering order requirement
+FR-REN-06,TC-REN-006,Not Started,Not Started,Regular expressions requirement
+FR-REN-07,TC-REN-007,Not Started,Not Started,Date insertion requirement
+FR-REN-08,TC-REN-008,Not Started,Not Started,Rename presets requirement
+FR-REN-09,TC-REN-009,Not Started,Not Started,Name swapping requirement
+FR-REN-10,TC-REN-010,Not Started,Not Started,File filtering requirement
+Project Structure,TC-ARCH-001,Completed,Passed,Layered architecture with proper dependencies
+CI Pipeline,TC-ARCH-002,Completed,Not Tested,.NET 8 solution with CI configuration
+Architecture Tests,TC-ARCH-003,Completed,Not Tested,NetArchTest rules for dependency validation

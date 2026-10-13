@@ -1,0 +1,123 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{2F8A1F4B-8E9A-4B2C-9C1D-3E4F5A6B7C8D}"
+EndProject
+
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{3F9B2F5C-9F0B-5C3D-0D2E-4F5G6A7B8C9E}"
+EndProject
+
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{4G0C3F6D-0G1C-6D4E-1E3F-5G6H7A8B9C0F}"
+EndProject
+
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{5H1D4G7E-1H2D-7E5F-2F4G-6H7I8A9B0C1G}"
+EndProject
+
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6I2E5H8F-2I3E-8F6G-3G5H-7I8J9A0B1C2H}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		Directory.Build.props = Directory.Build.props
+		Directory.Packages.props = Directory.Packages.props
+		global.json = global.json
+		README.md = README.md
+	EndProjectSection
+EndProject
+
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OneClick.Domain", "src\OneClick.Domain\OneClick.Domain.csproj", "{7J3F6I9G-3J4F-9G7H-4H6I-8J9K0A1B2C3I}"
+EndProject
+
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OneClick.Application", "src\OneClick.Application\OneClick.Application.csproj", "{8K4G7J0H-4K5G-0H8I-5I7J-9K0L1A2B3C4J}"
+EndProject
+
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OneClick.Infrastructure", "src\OneClick.Infrastructure\OneClick.Infrastructure.csproj", "{9L5H8K1I-5L6H-1I9J-6J8K-0L1M2A3B4C5K}"
+EndProject
+
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OneClick.App", "src\OneClick.App\OneClick.App.csproj", "{0M6I9L2J-6M7I-2J0K-7K9L-1M2N3A4B5C6L}"
+EndProject
+
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OneClick.Domain.Tests", "tests\OneClick.Domain.Tests\OneClick.Domain.Tests.csproj", "{1N7J0M3K-7N8J-3K1L-8L0M-2N3O4A5B6C7M}"
+EndProject
+
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OneClick.Application.Tests", "tests\OneClick.Application.Tests\OneClick.Application.Tests.csproj", "{2O8K1N4L-8O9K-4L2M-9M1N-3O4P5A6B7C8N}"
+EndProject
+
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OneClick.Infrastructure.Tests", "tests\OneClick.Infrastructure.Tests\OneClick.Infrastructure.Tests.csproj", "{3P9L2O5M-9P0L-5M3N-0N2O-4P5Q6A7B8C9O}"
+EndProject
+
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OneClick.UiTests", "tests\OneClick.UiTests\OneClick.UiTests.csproj", "{4Q0M3P6N-0Q1M-6N4O-1O3P-5Q6R7A8B9C0P}"
+EndProject
+
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OneClick.Benchmarks", "tests\OneClick.Benchmarks\OneClick.Benchmarks.csproj", "{5R1N4Q7O-1R2N-7O5P-2P4Q-6R7S8A9B0C1Q}"
+EndProject
+
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OneClick.ArchTests", "tests\OneClick.ArchTests\OneClick.ArchTests.csproj", "{6S2O5R8P-2S3O-8P6Q-3Q5R-7S8T9A0B1C2R}"
+EndProject
+
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7J3F6I9G-3J4F-9G7H-4H6I-8J9K0A1B2C3I}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7J3F6I9G-3J4F-9G7H-4H6I-8J9K0A1B2C3I}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7J3F6I9G-3J4F-9G7H-4H6I-8J9K0A1B2C3I}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7J3F6I9G-3J4F-9G7H-4H6I-8J9K0A1B2C3I}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8K4G7J0H-4K5G-0H8I-5I7J-9K0L1A2B3C4J}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8K4G7J0H-4K5G-0H8I-5I7J-9K0L1A2B3C4J}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8K4G7J0H-4K5G-0H8I-5I7J-9K0L1A2B3C4J}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8K4G7J0H-4K5G-0H8I-5I7J-9K0L1A2B3C4J}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9L5H8K1I-5L6H-1I9J-6J8K-0L1M2A3B4C5K}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9L5H8K1I-5L6H-1I9J-6J8K-0L1M2A3B4C5K}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9L5H8K1I-5L6H-1I9J-6J8K-0L1M2A3B4C5K}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9L5H8K1I-5L6H-1I9J-6J8K-0L1M2A3B4C5K}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0M6I9L2J-6M7I-2J0K-7K9L-1M2N3A4B5C6L}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0M6I9L2J-6M7I-2J0K-7K9L-1M2N3A4B5C6L}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0M6I9L2J-6M7I-2J0K-7K9L-1M2N3A4B5C6L}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0M6I9L2J-6M7I-2J0K-7K9L-1M2N3A4B5C6L}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1N7J0M3K-7N8J-3K1L-8L0M-2N3O4A5B6C7M}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1N7J0M3K-7N8J-3K1L-8L0M-2N3O4A5B6C7M}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1N7J0M3K-7N8J-3K1L-8L0M-2N3O4A5B6C7M}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1N7J0M3K-7N8J-3K1L-8L0M-2N3O4A5B6C7M}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2O8K1N4L-8O9K-4L2M-9M1N-3O4P5A6B7C8N}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2O8K1N4L-8O9K-4L2M-9M1N-3O4P5A6B7C8N}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2O8K1N4L-8O9K-4L2M-9M1N-3O4P5A6B7C8N}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2O8K1N4L-8O9K-4L2M-9M1N-3O4P5A6B7C8N}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3P9L2O5M-9P0L-5M3N-0N2O-4P5Q6A7B8C9O}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3P9L2O5M-9P0L-5M3N-0N2O-4P5Q6A7B8C9O}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3P9L2O5M-9P0L-5M3N-0N2O-4P5Q6A7B8C9O}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3P9L2O5M-9P0L-5M3N-0N2O-4P5Q6A7B8C9O}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4Q0M3P6N-0Q1M-6N4O-1O3P-5Q6R7A8B9C0P}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4Q0M3P6N-0Q1M-6N4O-1O3P-5Q6R7A8B9C0P}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4Q0M3P6N-0Q1M-6N4O-1O3P-5Q6R7A8B9C0P}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4Q0M3P6N-0Q1M-6N4O-1O3P-5Q6R7A8B9C0P}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5R1N4Q7O-1R2N-7O5P-2P4Q-6R7S8A9B0C1Q}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5R1N4Q7O-1R2N-7O5P-2P4Q-6R7S8A9B0C1Q}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5R1N4Q7O-1R2N-7O5P-2P4Q-6R7S8A9B0C1Q}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5R1N4Q7O-1R2N-7O5P-2P4Q-6R7S8A9B0C1Q}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6S2O5R8P-2S3O-8P6Q-3Q5R-7S8T9A0B1C2R}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6S2O5R8P-2S3O-8P6Q-3Q5R-7S8T9A0B1C2R}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6S2O5R8P-2S3O-8P6Q-3Q5R-7S8T9A0B1C2R}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6S2O5R8P-2S3O-8P6Q-3Q5R-7S8T9A0B1C2R}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7J3F6I9G-3J4F-9G7H-4H6I-8J9K0A1B2C3I} = {2F8A1F4B-8E9A-4B2C-9C1D-3E4F5A6B7C8D}
+		{8K4G7J0H-4K5G-0H8I-5I7J-9K0L1A2B3C4J} = {2F8A1F4B-8E9A-4B2C-9C1D-3E4F5A6B7C8D}
+		{9L5H8K1I-5L6H-1I9J-6J8K-0L1M2A3B4C5K} = {2F8A1F4B-8E9A-4B2C-9C1D-3E4F5A6B7C8D}
+		{0M6I9L2J-6M7I-2J0K-7K9L-1M2N3A4B5C6L} = {2F8A1F4B-8E9A-4B2C-9C1D-3E4F5A6B7C8D}
+		{1N7J0M3K-7N8J-3K1L-8L0M-2N3O4A5B6C7M} = {3F9B2F5C-9F0B-5C3D-0D2E-4F5G6A7B8C9E}
+		{2O8K1N4L-8O9K-4L2M-9M1N-3O4P5A6B7C8N} = {3F9B2F5C-9F0B-5C3D-0D2E-4F5G6A7B8C9E}
+		{3P9L2O5M-9P0L-5M3N-0N2O-4P5Q6A7B8C9O} = {3F9B2F5C-9F0B-5C3D-0D2E-4F5G6A7B8C9E}
+		{4Q0M3P6N-0Q1M-6N4O-1O3P-5Q6R7A8B9C0P} = {3F9B2F5C-9F0B-5C3D-0D2E-4F5G6A7B8C9E}
+		{5R1N4Q7O-1R2N-7O5P-2P4Q-6R7S8A9B0C1Q} = {3F9B2F5C-9F0B-5C3D-0D2E-4F5G6A7B8C9E}
+		{6S2O5R8P-2S3O-8P6Q-3Q5R-7S8T9A0B1C2R} = {3F9B2F5C-9F0B-5C3D-0D2E-4F5G6A7B8C9E}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A1B2C3D4-E5F6-7890-1234-56789ABCDEF0}
+	EndGlobalSection
+EndGlobal
